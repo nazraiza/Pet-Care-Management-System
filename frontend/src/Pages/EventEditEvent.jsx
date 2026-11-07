@@ -13,7 +13,7 @@ const EditEvent = () => {
   useEffect(() => {
     const fetchEvent = async () => {
       try {
-        const response = await axios.get(`http://localhost:5003/api/events/${id}`);
+        const response = await axios.get(`https://pet-care-backend-422z.onrender.com/api/events/${id}`);
         setEvent(response.data);
       } catch (error) {
         console.error("Error fetching event:", error);
@@ -39,7 +39,7 @@ const EditEvent = () => {
         formData.append("eventImage", eventData.eventImage);
       }
 
-      await axios.put(`http://localhost:5003/api/events/${id}`, formData, {
+      await axios.put(`https://pet-care-backend-422z.onrender.com/api/events/${id}`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

@@ -7,8 +7,8 @@ const AppointmentCancelationReqTable = () => {
   useEffect(() => {
     const fetchRefundRequests = async () => {
       try {
-        console.log('Fetching refund requests from http://localhost:5003/api/appointments/refundrequestforreview');
-        const response = await fetch('http://localhost:5003/api/appointments/refundrequestforreview');
+        console.log('Fetching refund requests from https://pet-care-backend-422z.onrender.com/api/appointments/refundrequestforreview');
+        const response = await fetch('https://pet-care-backend-422z.onrender.com/api/appointments/refundrequestforreview');
         if (!response.ok) {
           const errorData = await response.json();
           console.error('Response details:', {
@@ -33,7 +33,7 @@ const AppointmentCancelationReqTable = () => {
   const handleRefundAction = async (id, status) => {
     try {
       console.log(`Processing refund ${id} with status ${status}`);
-      const response = await fetch(`http://localhost:5003/api/appointments/refundrequests/${id}/status`, {
+      const response = await fetch(`https://pet-care-backend-422z.onrender.com/api/appointments/refundrequests/${id}/status`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

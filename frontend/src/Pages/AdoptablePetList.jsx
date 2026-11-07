@@ -39,7 +39,7 @@ const AdoptablePetList = () => {
     const fetchPets = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('http://localhost:5003/api/adoptablepets');
+        const response = await axios.get('https://pet-care-backend-422z.onrender.com/api/adoptablepets');
         
         // Map API data to the format we need for display
         const formattedPets = response.data.map(pet => ({
@@ -50,7 +50,7 @@ const AdoptablePetList = () => {
           age: pet.petAge,
           gender: pet.petGender,
           description: pet.petDescription,
-          image: pet.petImage ? `http://localhost:5003${pet.petImage}` : null,
+          image: pet.petImage ? `https://pet-care-backend-422z.onrender.com${pet.petImage}` : null,
           vaccinated: pet.vaccinated,
           neutered: pet.neutered,
           specialNeeds: pet.specialNeeds

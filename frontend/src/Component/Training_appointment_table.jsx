@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Search, Calendar } from 'lucide-react';
 
 // Fallback API URL if environment variables are not available
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5003';
+const API_URL = import.meta.env.VITE_API_URL || 'https://pet-care-backend-422z.onrender.com';
 
 const AppointmentTrainerTable = () => {
   const [appointments, setAppointments] = useState([]);

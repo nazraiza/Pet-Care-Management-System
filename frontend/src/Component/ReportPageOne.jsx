@@ -39,7 +39,7 @@ export default function ReportPageOne() {
     setProfSearchPerformed(true);
 
     try {
-      const res = await axios.get('http://localhost:5003/api/appointments/professional/report', {
+      const res = await axios.get('https://pet-care-backend-422z.onrender.com/api/appointments/professional/report', {
         params: { doctorId: profDoctorId, period: profPeriod },
       });
 
@@ -69,7 +69,7 @@ export default function ReportPageOne() {
 
       try {
         console.log('Fetching default daily report');
-        const response = await axios.get('http://localhost:5003/api/appointments/reports/generate', {
+        const response = await axios.get('https://pet-care-backend-422z.onrender.com/api/appointments/reports/generate', {
           params: { period: 'daily' },
         });
         console.log('Default report response:', response.data);
@@ -105,7 +105,7 @@ export default function ReportPageOne() {
 
     try {
       console.log('Making API request to generate report with period:', period);
-      const response = await axios.get('http://localhost:5003/api/appointments/reports/generate', {
+      const response = await axios.get('https://pet-care-backend-422z.onrender.com/api/appointments/reports/generate', {
         params: { period, startDate: period === 'custom' ? startDate : undefined, endDate: period === 'custom' ? endDate : undefined },
       });
       console.log('API response received:', response.data);

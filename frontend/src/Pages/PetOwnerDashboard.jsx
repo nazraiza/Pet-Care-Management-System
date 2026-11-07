@@ -43,7 +43,7 @@ const PetOwnerDashboard = () => {
   // Fetch adoptable pets to check status
   const fetchAdoptablePets = async () => {
     try {
-      const response = await axios.get('http://localhost:5003/api/adoptablepets');
+      const response = await axios.get('https://pet-care-backend-422z.onrender.com/api/adoptablepets');
       setAdoptablePets(response.data);
     } catch (err) {
       console.error("Error fetching adoptable pets:", err);
@@ -56,7 +56,7 @@ const PetOwnerDashboard = () => {
       setLoading(true);
       console.log('Fetching pets for userId:', userId);
       // Get pets for the specific user using the owner endpoint
-      const response = await axios.get(`http://localhost:5003/api/foradoption/owner/${userId}`, {
+      const response = await axios.get(`https://pet-care-backend-422z.onrender.com/api/foradoption/owner/${userId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -78,7 +78,7 @@ const PetOwnerDashboard = () => {
   // Fetch adopted pets
   const fetchAdoptedPets = async () => {
     try {
-      const response = await axios.get('http://localhost:5003/api/adoptedpets');
+      const response = await axios.get('https://pet-care-backend-422z.onrender.com/api/adoptedpets');
       setAdoptedPets(response.data);
     } catch (err) {
       console.error("Error fetching adopted pets:", err);
@@ -104,7 +104,7 @@ const PetOwnerDashboard = () => {
   // Handle actual deletion
   const handleDeleteConfirm = async () => {
     try {
-      await axios.delete(`http://localhost:5003/api/foradoption/${showDeleteConfirm.petId}`, {
+      await axios.delete(`https://pet-care-backend-422z.onrender.com/api/foradoption/${showDeleteConfirm.petId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -281,7 +281,7 @@ const PetOwnerDashboard = () => {
                   {/* Pet Image with Species Icon */}
                   <div className="w-30/100 relative">
                     <img
-                      src={pet.petImage ? `http://localhost:5003${pet.petImage}` : '/placeholder-pet.jpg'}
+                      src={pet.petImage ? `https://pet-care-backend-422z.onrender.com${pet.petImage}` : '/placeholder-pet.jpg'}
                       alt={pet.petName}
                       className="w-full h-full object-contain"
                     />

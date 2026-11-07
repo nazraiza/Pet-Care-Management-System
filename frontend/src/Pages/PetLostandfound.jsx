@@ -21,7 +21,7 @@ const PetLostandfound = () => {
     try {
       setLoading(true);
       const endpoint = activeTab === 'lost' ? '/api/lost-and-found/lost' : '/api/lost-and-found/found';
-      const response = await axios.get(`http://localhost:5003${endpoint}`);
+      const response = await axios.get(`https://pet-care-backend-422z.onrender.com${endpoint}`);
       setPets(response.data);
     } catch (error) {
       console.error('Error fetching pets:', error);
@@ -59,7 +59,7 @@ const PetLostandfound = () => {
 
     try {
       const token = localStorage.getItem('petOwnerToken');
-      await axios.delete(`http://localhost:5003/api/lost-and-found/${activeTab}/${id}`, {
+      await axios.delete(`https://pet-care-backend-422z.onrender.com/api/lost-and-found/${activeTab}/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -164,7 +164,7 @@ const PetLostandfound = () => {
                 <div className="relative pt-[125%]">
                   {pet.image ? (
                     <img
-                      src={`http://localhost:5003/uploads/${pet.image}`}
+                      src={`https://pet-care-backend-422z.onrender.com/uploads/${pet.image}`}
                       alt={pet.petName}
                       className="absolute top-0 left-0 w-full h-full object-cover"
                     />

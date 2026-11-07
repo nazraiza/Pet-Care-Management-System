@@ -41,7 +41,7 @@ const UsersList = () => {
         if (!token) {
           throw new Error('No authentication token found');
         }
-        const response = await axios.get('http://localhost:5003/api/users/all', {
+        const response = await axios.get('https://pet-care-backend-422z.onrender.com/api/users/all', {
           headers: { Authorization: `Bearer ${token}` },
         });
         console.log('Fetched users:', response.data); // Log to inspect data
@@ -138,7 +138,7 @@ const UsersList = () => {
       }
 
       const response = await axios.post(
-        `http://localhost:5003/api/users/deleteProfile/${userId}`,
+        `https://pet-care-backend-422z.onrender.com/api/users/deleteProfile/${userId}`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },

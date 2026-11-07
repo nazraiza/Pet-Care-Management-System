@@ -29,7 +29,7 @@ const EditFoundPet = () => {
   const fetchPetDetails = async () => {
     try {
       const token = localStorage.getItem('token') || localStorage.getItem('adminToken');
-      const response = await axios.get(`http://localhost:5003/api/lost-and-found/found/${id}`, {
+      const response = await axios.get(`https://pet-care-backend-422z.onrender.com/api/lost-and-found/found/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       const pet = response.data;
@@ -84,7 +84,7 @@ const EditFoundPet = () => {
         }
       });
 
-      await axios.put(`http://localhost:5003/api/lost-and-found/found/${id}`, formDataToSend, {
+      await axios.put(`https://pet-care-backend-422z.onrender.com/api/lost-and-found/found/${id}`, formDataToSend, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'
@@ -107,7 +107,7 @@ const EditFoundPet = () => {
 
     try {
       const token = localStorage.getItem('petOwnerToken') || localStorage.getItem('adminToken');
-      await axios.delete(`http://localhost:5003/api/lost-and-found/found/${id}`, {
+      await axios.delete(`https://pet-care-backend-422z.onrender.com/api/lost-and-found/found/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
 

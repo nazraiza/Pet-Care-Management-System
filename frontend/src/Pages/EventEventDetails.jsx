@@ -18,11 +18,11 @@ const EventDetails = () => {
     const fetchEventData = async () => {
       try {
         setLoading(true);
-        const eventResponse = await axios.get(`http://localhost:5003/api/events/${id}`);
+        const eventResponse = await axios.get(`https://pet-care-backend-422z.onrender.com/api/events/${id}`);
         setEvent(eventResponse.data);
 
         try {
-          const attendeesResponse = await axios.get(`http://localhost:5003/api/registrations/event/${id}`);
+          const attendeesResponse = await axios.get(`https://pet-care-backend-422z.onrender.com/api/registrations/event/${id}`);
           setAttendees(attendeesResponse.data.registrations || []);
         } catch (attendeesError) {
           console.error("Error fetching attendees:", attendeesError);
@@ -43,7 +43,7 @@ const EventDetails = () => {
   const refreshAttendees = async () => {
     try {
       setAttendeesLoading(true);
-      const response = await axios.get(`http://localhost:5003/api/registrations/event/${id}`);
+      const response = await axios.get(`https://pet-care-backend-422z.onrender.com/api/registrations/event/${id}`);
       setAttendees(response.data.registrations || []);
     } catch (err) {
       console.error("Error refreshing attendees:", err);

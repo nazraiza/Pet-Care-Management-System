@@ -23,7 +23,7 @@ const CreateEvent = () => {
       }
 
       // Send POST request to backend
-      const response = await axios.post("http://localhost:5003/api/events", formData, {
+      const response = await axios.post("https://pet-care-backend-422z.onrender.com/api/events", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

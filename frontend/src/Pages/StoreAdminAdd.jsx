@@ -5,7 +5,7 @@ import { PlusCircle, Upload, Tag, Info, Package, Layers, Check, FileText, Downlo
 import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
 
-const backendUrl = 'http://localhost:5003';
+const backendUrl = 'https://pet-care-backend-422z.onrender.com';
 
 const StoreAdminAdd = ({ token }) => {
   const [image1, setImage1] = useState(null);

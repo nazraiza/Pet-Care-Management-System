@@ -40,7 +40,7 @@ const StaffLogin = () => {
   if (!validateProfessionalForm()) return;
 
   try {
-    const response = await fetch("http://localhost:5003/api/professionals/profflogin", {
+    const response = await fetch("https://pet-care-backend-422z.onrender.com/api/professionals/profflogin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -75,7 +75,7 @@ const StaffLogin = () => {
     setAdminError("");
 
     try {
-      const response = await fetch("http://localhost:5003/api/admins/login", {
+      const response = await fetch("https://pet-care-backend-422z.onrender.com/api/admins/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

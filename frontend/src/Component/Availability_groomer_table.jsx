@@ -3,7 +3,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { Search, CalendarCheck, BellRing, CheckCircle2, XCircle } from "lucide-react";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5003";
+const API_URL = import.meta.env.VITE_API_URL || "https://pet-care-backend-422z.onrender.com";
 
 export default function GroomerAvailability() {
   const [availabilities, setAvailabilities] = useState([]);

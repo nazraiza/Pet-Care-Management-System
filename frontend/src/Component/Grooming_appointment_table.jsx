@@ -2,7 +2,7 @@
 import { Search, Calendar, BellRing, ArrowRight } from 'lucide-react';
 
 // Fallback API URL if environment variables are not available
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5003';
+const API_URL = import.meta.env.VITE_API_URL || 'https://pet-care-backend-422z.onrender.com';
 
 const AppointmentGroomerTable = () => {
   const [appointments, setAppointments] = useState([]);

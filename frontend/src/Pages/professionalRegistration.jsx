@@ -127,7 +127,7 @@ const ProfessionalRegistration = () => {
           hasProfilePicture: !!profilePicture
         });
 
-        const response = await fetch("http://localhost:5003/api/professionals/register", {
+        const response = await fetch("https://pet-care-backend-422z.onrender.com/api/professionals/register", {
           method: "POST",
           body: formDataToSend,
         });

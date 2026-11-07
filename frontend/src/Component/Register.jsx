@@ -15,7 +15,7 @@ const Register = () => {
     setError("");
 
     try {
-      const response = await fetch("http://localhost:5003/api/users/register", {
+      const response = await fetch("https://pet-care-backend-422z.onrender.com/api/users/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

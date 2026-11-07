@@ -31,7 +31,7 @@ const EditLostPet = () => {
   const fetchPetDetails = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get(`http://localhost:5003/api/lost-and-found/lost/${id}`, {
+      const response = await axios.get(`https://pet-care-backend-422z.onrender.com/api/lost-and-found/lost/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       const pet = response.data;
@@ -88,7 +88,7 @@ const EditLostPet = () => {
         }
       });
 
-      await axios.put(`http://localhost:5003/api/lost-and-found/lost/${id}`, formDataToSend, {
+      await axios.put(`https://pet-care-backend-422z.onrender.com/api/lost-and-found/lost/${id}`, formDataToSend, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'
@@ -111,7 +111,7 @@ const EditLostPet = () => {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5003/api/lost-and-found/lost/${id}`, {
+      await axios.delete(`https://pet-care-backend-422z.onrender.com/api/lost-and-found/lost/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
 

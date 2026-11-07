@@ -34,11 +34,11 @@ const EditPetForm = () => {
     const fetchPetData = async () => {
       try {
         console.log('Fetching pet data for ID:', id);
-        const response = await axios.get(`http://localhost:5003/api/foradoption/${id}`);
+        const response = await axios.get(`https://pet-care-backend-422z.onrender.com/api/foradoption/${id}`);
         console.log('Received pet data:', response.data);
         setFormData(response.data);
         if (response.data.petImage) {
-          setPreviewImage(`http://localhost:5003${response.data.petImage}`);
+          setPreviewImage(`https://pet-care-backend-422z.onrender.com${response.data.petImage}`);
         }
         setLoading(false);
       } catch (err) {
@@ -117,7 +117,7 @@ const EditPetForm = () => {
         }
 
         console.log('Submitting form data:', Object.fromEntries(data));
-        const response = await axios.put(`http://localhost:5003/api/foradoption/${id}`, data, {
+        const response = await axios.put(`https://pet-care-backend-422z.onrender.com/api/foradoption/${id}`, data, {
           headers: { "Content-Type": "multipart/form-data" },
         });
         console.log('Update response:', response.data);

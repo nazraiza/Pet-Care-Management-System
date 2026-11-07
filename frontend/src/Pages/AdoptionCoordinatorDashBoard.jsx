@@ -155,10 +155,10 @@ const PetAdoptionCoordinatorDashboard = () => {
   const fetchPendingPets = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5003/api/foradoption');
+      const response = await axios.get('https://pet-care-backend-422z.onrender.com/api/foradoption');
       
       // Get all adoptable pets to check which ones are already added
-      const adoptableResponse = await axios.get('http://localhost:5003/api/adoptablepets');
+      const adoptableResponse = await axios.get('https://pet-care-backend-422z.onrender.com/api/adoptablepets');
       const adoptablePetIds = adoptableResponse.data.map(pet => pet.originalPetId || pet._id);
       
       // Filter out pets that are already in the adoptable list
@@ -178,7 +178,7 @@ const PetAdoptionCoordinatorDashboard = () => {
   const fetchAdoptablePets = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5003/api/adoptablepets');
+      const response = await axios.get('https://pet-care-backend-422z.onrender.com/api/adoptablepets');
       setAdoptablePets(response.data);
       setError(null);
     } catch (err) {
@@ -200,7 +200,7 @@ const fetchAdoptionForms = async () => {
       return;
     }
 
-    const response = await axios.get('http://localhost:5003/api/adoptionform/all', {
+    const response = await axios.get('https://pet-care-backend-422z.onrender.com/api/adoptionform/all', {
       headers: { Authorization: `Bearer ${token}` }
     });
 
@@ -216,7 +216,7 @@ const fetchAdoptionForms = async () => {
   const fetchHomeVisits = async () => {
     try {
       const token = localStorage.getItem('adminToken') || localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5003/api/homevisits', {
+      const response = await axios.get('https://pet-care-backend-422z.onrender.com/api/homevisits', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -232,7 +232,7 @@ const fetchAdoptionForms = async () => {
   const fetchAdoptedPets = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5003/api/adoptedpets');
+      const response = await axios.get('https://pet-care-backend-422z.onrender.com/api/adoptedpets');
       setAdoptedPets(response.data);
       setError(null);
     } catch (err) {
@@ -277,7 +277,7 @@ const fetchAdoptionForms = async () => {
         formData.append('petImage', fileInput.files[0]);
       }
       
-      await axios.post('http://localhost:5003/api/foradoption', formData, {
+      await axios.post('https://pet-care-backend-422z.onrender.com/api/foradoption', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -316,7 +316,7 @@ const fetchAdoptionForms = async () => {
   const handleDeletePet = async (petId) => {
     try {
       setDeleteLoading(true);
-      await axios.delete(`http://localhost:5003/api/adoptablepets/${petId}`);
+      await axios.delete(`https://pet-care-backend-422z.onrender.com/api/adoptablepets/${petId}`);
       
       // Remove the pet ID from hidden pets and save to localStorage
       setHiddenPetIds(prev => {
@@ -358,7 +358,7 @@ const fetchAdoptionForms = async () => {
 
   const handleCopyPet = async (petId) => {
     try {
-      const response = await axios.post(`http://localhost:5003/api/movePet/${petId}`);
+      const response = await axios.post(`https://pet-care-backend-422z.onrender.com/api/movePet/${petId}`);
       
       // Add the pet ID to hidden pets and save to localStorage
       setHiddenPetIds(prev => {
@@ -621,7 +621,7 @@ const fetchAdoptionForms = async () => {
                       {/* Pet Image */}
                       {pet.petImage ? (
                         <img 
-                          src={`http://localhost:5003${pet.petImage}`} 
+                          src={`https://pet-care-backend-422z.onrender.com${pet.petImage}`} 
                           alt={pet.petName} 
                           className="w-full h-128 object-cover"
                         />
@@ -697,7 +697,7 @@ const fetchAdoptionForms = async () => {
                       {/* Pet Image */}
                       {pet.petImage ? (
                         <img 
-                          src={`http://localhost:5003${pet.petImage}`} 
+                          src={`https://pet-care-backend-422z.onrender.com${pet.petImage}`} 
                           alt={pet.petName} 
                           className="w-full h-128 object-cover"
                         />
@@ -784,7 +784,7 @@ const fetchAdoptionForms = async () => {
                     {/* Pet Image */}
                     {pet.petImage ? (
                       <img
-                        src={`http://localhost:5003${pet.petImage}`}
+                        src={`https://pet-care-backend-422z.onrender.com${pet.petImage}`}
                         alt={pet.petName}
                         className="w-full h-128 object-cover"
                       />
@@ -891,7 +891,7 @@ const visibleForms = adoptionForms.filter(form => {
                               <div className="relative w-40 h-40 rounded-xl overflow-hidden">
                                 {form.petImage ? (
                                   <img 
-                                    src={form.petImage.startsWith('http') ? form.petImage : `http://localhost:5003${form.petImage}`} 
+                                    src={form.petImage.startsWith('http') ? form.petImage : `https://pet-care-backend-422z.onrender.com${form.petImage}`} 
                                     alt={form.petName} 
                                     className="w-full h-full object-cover"
                                     onError={(e) => {
@@ -1106,7 +1106,7 @@ const visibleForms = adoptionForms.filter(form => {
                         <div className="relative w-40 h-40 rounded-xl overflow-hidden">
                           {form.petImage ? (
                             <img 
-                              src={form.petImage.startsWith('http') ? form.petImage : `http://localhost:5003${form.petImage}`} 
+                              src={form.petImage.startsWith('http') ? form.petImage : `https://pet-care-backend-422z.onrender.com${form.petImage}`} 
                               alt={form.petName} 
                               className="w-full h-full object-cover"
                               onError={(e) => {
@@ -1925,7 +1925,7 @@ const visibleForms = adoptionForms.filter(form => {
     try {
       const token = localStorage.getItem('adminToken') || localStorage.getItem('token');
       await axios.put(
-        `http://localhost:5003/api/adoptionform/update/${formId}`,
+        `https://pet-care-backend-422z.onrender.com/api/adoptionform/update/${formId}`,
         { status: 'approved' },
         {
           headers: {
@@ -1960,7 +1960,7 @@ const visibleForms = adoptionForms.filter(form => {
       const token = localStorage.getItem('adminToken') || localStorage.getItem('token');
       // Reject the application
       await axios.put(
-        `http://localhost:5003/api/adoptionform/update/${formId}`,
+        `https://pet-care-backend-422z.onrender.com/api/adoptionform/update/${formId}`,
         { status: 'rejected' },
         {
           headers: {
@@ -1970,7 +1970,7 @@ const visibleForms = adoptionForms.filter(form => {
       );
       // Also update all related home visits to rejected
       await axios.put(
-        `http://localhost:5003/api/homevisits/by-form/${formId}/reject`,
+        `https://pet-care-backend-422z.onrender.com/api/homevisits/by-form/${formId}/reject`,
         {},
         {
           headers: {
@@ -2071,7 +2071,7 @@ const visitData = {
       console.log('Submitting visit data:', visitData); // Debug log
 
       const response = await axios.post(
-        'http://localhost:5003/api/homevisits',
+        'https://pet-care-backend-422z.onrender.com/api/homevisits',
         visitData,
         {
           headers: {
@@ -2258,7 +2258,7 @@ const visitData = {
     try {
       const token = localStorage.getItem('adminToken') || localStorage.getItem('token');
       await axios.put(
-        `http://localhost:5003/api/homevisits/${visitId}`,
+        `https://pet-care-backend-422z.onrender.com/api/homevisits/${visitId}`,
         { status },
         {
           headers: {
@@ -2309,7 +2309,7 @@ const visitData = {
   const handleAdoptedPet = async (petId) => {
     try {
       setDeleteLoading(true);
-      await axios.post(`http://localhost:5003/api/adoptedpets/move/${petId}`);
+      await axios.post(`https://pet-care-backend-422z.onrender.com/api/adoptedpets/move/${petId}`);
       await Promise.all([
         fetchAdoptablePets(),
         fetchAdoptedPets(),

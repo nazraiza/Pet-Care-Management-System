@@ -40,7 +40,7 @@ const ProfessionalsList = () => {
         if (!token) {
           throw new Error('No authentication token found');
         }
-        const response = await axios.get('http://localhost:5003/api/professionals/all', {
+        const response = await axios.get('https://pet-care-backend-422z.onrender.com/api/professionals/all', {
           headers: { Authorization: `Bearer ${token}` },
         });
         console.log('Fetched professionals:', response.data); // Log to inspect data
@@ -88,7 +88,7 @@ const ProfessionalsList = () => {
       }
 
       const response = await axios.post(
-        `http://localhost:5003/api/professionals/delete/${professionalId}`,
+        `https://pet-care-backend-422z.onrender.com/api/professionals/delete/${professionalId}`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },

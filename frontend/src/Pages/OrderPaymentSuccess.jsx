@@ -27,7 +27,7 @@ const OrderPaymentSuccess = () => {
   const fetchInvoiceData = async (orderId) => {
     try {
       console.log('Fetching invoice data for order:', orderId);
-      const response = await axios.get(`http://localhost:5003/api/order/invoice/${orderId}`);
+      const response = await axios.get(`https://pet-care-backend-422z.onrender.com/api/order/invoice/${orderId}`);
       console.log('Invoice response:', response.data);
       if (response.data.success) {
         setInvoiceData(response.data.invoice);

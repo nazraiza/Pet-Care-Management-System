@@ -50,7 +50,7 @@ export default function UserHeader() {
 
   const validateToken = async () => {
     try {
-      const response = await fetch("http://localhost:5003/api/users/profile", {
+      const response = await fetch("https://pet-care-backend-422z.onrender.com/api/users/profile", {
         headers: {
           "Authorization": `Bearer ${petOwnerToken}`,
           "Content-Type": "application/json",
@@ -66,7 +66,7 @@ export default function UserHeader() {
     e.preventDefault();
     setLoginError("");
     try {
-      const response = await fetch("http://localhost:5003/api/users/login", {
+      const response = await fetch("https://pet-care-backend-422z.onrender.com/api/users/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -154,7 +154,7 @@ const phoneRegex = /^01[3-9]\d{8}$/;
       if (profilePic) {
         formData.append("profilePicture", profilePic);
       }
-      const response = await fetch("http://localhost:5003/api/users/register", {
+      const response = await fetch("https://pet-care-backend-422z.onrender.com/api/users/register", {
         method: "POST",
         body: formData,
       });

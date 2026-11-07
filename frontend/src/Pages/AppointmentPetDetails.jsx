@@ -73,7 +73,7 @@ diagnosis: '',
       try {
         console.log('Fetching pet and appointment details...');
         const response = await axios.get(
-          `http://localhost:5003/api/professional-appointments/${appointmentId}/pet-details`,
+          `https://pet-care-backend-422z.onrender.com/api/professional-appointments/${appointmentId}/pet-details`,
           {
             headers: { Authorization: `Bearer ${token}` },
             timeout: 10000,
@@ -206,7 +206,7 @@ if (requiredFields.length > 0 && requiredFields.some((field) => !formData[field]
 
     try {
       const response = await axios.post(
-        `http://localhost:5003/api/professional-appointments/${appointmentId}/add-report`,
+        `https://pet-care-backend-422z.onrender.com/api/professional-appointments/${appointmentId}/add-report`,
         {
   type: reportType,
   ...(reportType === "Prescription"
@@ -272,7 +272,7 @@ localStorage.removeItem('professionalUser');
   const handleDeleteReport = async () => {
     try {
       const response = await axios.delete(
-        `http://localhost:5003/api/professional-appointments/${appointmentId}/reports/${reportToDelete}`,
+        `https://pet-care-backend-422z.onrender.com/api/professional-appointments/${appointmentId}/reports/${reportToDelete}`,
         {
           headers: { Authorization: `Bearer ${token}` },
           timeout: 10000,
@@ -350,7 +350,7 @@ localStorage.removeItem('professionalUser');
 
     try {
       const response = await axios.put(
-        `http://localhost:5003/api/professional-appointments/${appointmentId}/reports/${editReport._id}`,
+        `https://pet-care-backend-422z.onrender.com/api/professional-appointments/${appointmentId}/reports/${editReport._id}`,
         { type: reportType, ...formData },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -400,7 +400,7 @@ localStorage.removeItem('professionalUser');
   const handleEndAppointment = async () => {
     try {
       const response = await axios.patch(
-        `http://localhost:5003/api/professional-appointments/${appointmentId}/end`,
+        `https://pet-care-backend-422z.onrender.com/api/professional-appointments/${appointmentId}/end`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },

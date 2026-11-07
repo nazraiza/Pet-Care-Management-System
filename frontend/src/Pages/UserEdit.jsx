@@ -21,7 +21,7 @@ const UserEdit = () => {
     const fetchProfile = async () => {
       try {
         const token = localStorage.getItem('petOwnerToken');
-        const response = await axios.get('http://localhost:5003/api/users/profile', {
+        const response = await axios.get('https://pet-care-backend-422z.onrender.com/api/users/profile', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setFormData({
@@ -55,7 +55,7 @@ Object.keys(formData).forEach(key => {
   formDataToSend.append(key, formData[key]); // only remaining fields: name, email, phoneNumber, city
 });
 
-      const response = await axios.put('http://localhost:5003/api/users/updateProfile', formDataToSend, {
+      const response = await axios.put('https://pet-care-backend-422z.onrender.com/api/users/updateProfile', formDataToSend, {
         headers: { 
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'
@@ -84,7 +84,7 @@ Object.keys(formData).forEach(key => {
   const handleDeleteProfile = async () => {
     try {
       const token = localStorage.getItem('petOwnerToken');
-      const response = await axios.post('http://localhost:5003/api/users/deleteProfile', {}, {
+      const response = await axios.post('https://pet-care-backend-422z.onrender.com/api/users/deleteProfile', {}, {
         headers: { Authorization: `Bearer ${token}` }
       });
       

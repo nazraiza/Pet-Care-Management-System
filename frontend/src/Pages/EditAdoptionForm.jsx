@@ -27,7 +27,7 @@ const EditAdoptionForm = () => {
   useEffect(() => {
     const fetchFormData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5003/api/adoptionform/${id}`, {
+        const response = await axios.get(`https://pet-care-backend-422z.onrender.com/api/adoptionform/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -57,7 +57,7 @@ const EditAdoptionForm = () => {
     setError('');
 
     try {
-      await axios.put(`http://localhost:5003/api/adoptionform/update/${id}`, formData, {
+      await axios.put(`https://pet-care-backend-422z.onrender.com/api/adoptionform/update/${id}`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json'

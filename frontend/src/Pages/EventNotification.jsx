@@ -5,7 +5,7 @@ import ReportChart from "../Component/EventReportChart";
 import Footer from "../Component/EventFooter";
 
 const api = axios.create({
-  baseURL: "http://localhost:5003/api",
+  baseURL: "https://pet-care-backend-422z.onrender.com/api",
   headers: { "Content-Type": "application/json" },
 });
 

@@ -1,2 +1,2 @@
 // Backend API URL
-export const BACKEND_URL = 'http://localhost:5003'; 
+export const BACKEND_URL = 'https://pet-care-backend-422z.onrender.com'; 

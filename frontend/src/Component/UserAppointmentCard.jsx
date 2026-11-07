@@ -32,7 +32,7 @@ export default function UserAppointmentCard() {
 
   const fetchProfessionals = async () => {
     try {
-const backendUrl = `http://localhost:5003/api/professionals/public/all`;      console.log("Fetching professionals with URL:", backendUrl);
+const backendUrl = `https://pet-care-backend-422z.onrender.com/api/professionals/public/all`;      console.log("Fetching professionals with URL:", backendUrl);
       const response = await fetch(backendUrl, {
         headers: {
           "Content-Type": "application/json",
@@ -78,7 +78,7 @@ const backendUrl = `http://localhost:5003/api/professionals/public/all`;      co
       setError(null);
     } catch (error) {
       console.error("Error fetching professionals:", error.message);
-setError(`Failed to fetch professionals: ${error.message}. Ensure backend is running at http://localhost:5003 and endpoint /api/professionals/public/all is working.`);    }
+setError(`Failed to fetch professionals: ${error.message}. Ensure backend is running at https://pet-care-backend-422z.onrender.com and endpoint /api/professionals/public/all is working.`);    }
   };
 
   const handleViewDetails = (professional) => {

@@ -16,7 +16,7 @@ import {
 import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
 
-const backendUrl = 'http://localhost:5003';
+const backendUrl = 'https://pet-care-backend-422z.onrender.com';
 const currency = '৳ ';
 
 const SalesReportGenerator = ({ token }) => {

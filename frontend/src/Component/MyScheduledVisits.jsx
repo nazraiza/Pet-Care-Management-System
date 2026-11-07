@@ -12,7 +12,7 @@ const MyScheduledVisits = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem('petOwnerToken');
-      const response = await axios.get('http://localhost:5003/api/homevisits/my-visits', {
+      const response = await axios.get('https://pet-care-backend-422z.onrender.com/api/homevisits/my-visits', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setVisits(response.data);
@@ -33,7 +33,7 @@ const MyScheduledVisits = () => {
     try {
       const token = localStorage.getItem('petOwnerToken');
       await axios.patch(
-        `http://localhost:5003/api/homevisits/${visitId}/respond`,
+        `https://pet-care-backend-422z.onrender.com/api/homevisits/${visitId}/respond`,
         { userResponse: response },
         { headers: { Authorization: `Bearer ${token}` } }
       );

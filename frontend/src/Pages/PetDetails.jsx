@@ -22,7 +22,7 @@ const PetDetails = () => {
     try {
       setLoading(true);
       const endpoint = type === 'lost' ? '/api/lost-and-found/lost' : '/api/lost-and-found/found';
-      const response = await axios.get(`http://localhost:5003${endpoint}/${id}`);
+      const response = await axios.get(`https://pet-care-backend-422z.onrender.com${endpoint}/${id}`);
       setPet(response.data);
     } catch (error) {
       console.error('Error fetching pet details:', error);
@@ -65,7 +65,7 @@ const PetDetails = () => {
             <div>
               {pet.image ? (
                 <img
-                  src={`http://localhost:5003/uploads/${pet.image}`}
+                  src={`https://pet-care-backend-422z.onrender.com/uploads/${pet.image}`}
                   alt={pet.petName || 'Pet'}
                   className="rounded-lg w-full h-96 object-cover"
                 />

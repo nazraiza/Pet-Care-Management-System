@@ -15,7 +15,7 @@ const AdoptionHomePage = () => {
   useEffect(() => {
     const fetchFeaturedPets = async () => {
       try {
-        const response = await axios.get('http://localhost:5003/api/adoptablepets');
+        const response = await axios.get('https://pet-care-backend-422z.onrender.com/api/adoptablepets');
         setFeaturedPets(response.data.slice(0, 8));
       } catch (error) {
         console.error("Error fetching featured pets:", error);
@@ -133,7 +133,7 @@ const AdoptionHomePage = () => {
                     >
                       <div className="relative pt-[125%]">
                         <img
-                          src={pet.petImage ? `http://localhost:5003${pet.petImage}` : 'https://via.placeholder.com/300'}
+                          src={pet.petImage ? `https://pet-care-backend-422z.onrender.com${pet.petImage}` : 'https://via.placeholder.com/300'}
                           alt={pet.petName}
                           className="absolute top-0 left-0 w-full h-full object-cover"
                         />
@@ -151,7 +151,7 @@ const AdoptionHomePage = () => {
                               navigate('/adopt', { 
                                 state: { 
                                   petName: pet.petName, 
-                                  petImage: pet.petImage ? `http://localhost:5003${pet.petImage}` : 'https://via.placeholder.com/300',
+                                  petImage: pet.petImage ? `https://pet-care-backend-422z.onrender.com${pet.petImage}` : 'https://via.placeholder.com/300',
                                   petType: pet.petSpecies
                                 } 
                               });
@@ -162,7 +162,7 @@ const AdoptionHomePage = () => {
                                     pathname: '/adopt',
                                     state: {
                                       petName: pet.petName,
-                                      petImage: pet.petImage ? `http://localhost:5003${pet.petImage}` : 'https://via.placeholder.com/300',
+                                      petImage: pet.petImage ? `https://pet-care-backend-422z.onrender.com${pet.petImage}` : 'https://via.placeholder.com/300',
                                       petType: pet.petSpecies
                                     }
                                   } 
@@ -186,7 +186,7 @@ const AdoptionHomePage = () => {
                     >
                       <div className="relative pt-[125%]">
                         <img
-                          src={pet.petImage ? `http://localhost:5003${pet.petImage}` : 'https://via.placeholder.com/300'}
+                          src={pet.petImage ? `https://pet-care-backend-422z.onrender.com${pet.petImage}` : 'https://via.placeholder.com/300'}
                           alt={pet.petName}
                           className="absolute top-0 left-0 w-full h-full object-cover"
                         />
@@ -204,7 +204,7 @@ const AdoptionHomePage = () => {
                               navigate('/adopt', { 
                                 state: { 
                                   petName: pet.petName, 
-                                  petImage: pet.petImage ? `http://localhost:5003${pet.petImage}` : 'https://via.placeholder.com/300',
+                                  petImage: pet.petImage ? `https://pet-care-backend-422z.onrender.com${pet.petImage}` : 'https://via.placeholder.com/300',
                                   petType: pet.petSpecies
                                 } 
                               });
@@ -215,7 +215,7 @@ const AdoptionHomePage = () => {
                                     pathname: '/adopt',
                                     state: {
                                       petName: pet.petName,
-                                      petImage: pet.petImage ? `http://localhost:5003${pet.petImage}` : 'https://via.placeholder.com/300',
+                                      petImage: pet.petImage ? `https://pet-care-backend-422z.onrender.com${pet.petImage}` : 'https://via.placeholder.com/300',
                                       petType: pet.petSpecies
                                     }
                                   } 

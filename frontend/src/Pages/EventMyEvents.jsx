@@ -12,7 +12,7 @@ const MyEvents = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get("http://localhost:5003/api/events");
+        const response = await axios.get("https://pet-care-backend-422z.onrender.com/api/events");
         setEvents(response.data);
         setFilteredEvents(response.data);
       } catch (error) {
@@ -43,7 +43,7 @@ const MyEvents = () => {
     const confirmDelete = window.confirm("Are you sure you want to delete this event?");
     if (confirmDelete) {
       try {
-        await axios.delete(`http://localhost:5003/api/events/${eventId}`);
+        await axios.delete(`https://pet-care-backend-422z.onrender.com/api/events/${eventId}`);
         setEvents(events.filter((event) => event._id !== eventId));
         alert("Event deleted successfully!");
       } catch (error) {

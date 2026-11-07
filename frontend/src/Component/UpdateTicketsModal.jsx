@@ -5,7 +5,7 @@ import axios from "axios";
 import { FaPaw, FaInfoCircle } from "react-icons/fa";
 
 const api = axios.create({
-  baseURL: "http://localhost:5003/api",
+  baseURL: "https://pet-care-backend-422z.onrender.com/api",
   headers: { "Content-Type": "application/json" },
 });
 

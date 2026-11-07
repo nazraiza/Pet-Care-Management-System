@@ -23,7 +23,7 @@ export default function ActiveProfessionals() {
       try {
         setLoading(true);
         const response = await axios.get(
-          `http://localhost:5003/api/appointments/active-professionals?filter=${filters[selectedCategory]}`,
+          `https://pet-care-backend-422z.onrender.com/api/appointments/active-professionals?filter=${filters[selectedCategory]}`,
           { timeout: 5000 }
         );
         console.log("Response:", response.data);

@@ -17,7 +17,7 @@ const [selectedUser, setSelectedUser] = useState(null); // all, medical, groomin
   const fetchReports = async () => {
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await axios.get('http://localhost:5003/api/admins/medical-reports', {
+      const response = await axios.get('https://pet-care-backend-422z.onrender.com/api/admins/medical-reports', {
         headers: { Authorization: `Bearer ${token}` }
       });
 

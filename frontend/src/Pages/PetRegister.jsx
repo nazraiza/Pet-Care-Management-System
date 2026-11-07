@@ -48,7 +48,7 @@ const PetRegister = () => {
         formDataToSend.append('petimage', formData.petimage);
       }
 
-      const response = await axios.post('http://localhost:5003/api/pets/registerPet', formDataToSend, {
+      const response = await axios.post('https://pet-care-backend-422z.onrender.com/api/pets/registerPet', formDataToSend, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'

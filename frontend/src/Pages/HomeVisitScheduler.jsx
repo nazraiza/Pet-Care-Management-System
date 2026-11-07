@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CheckCircle, XCircle, Calendar, Phone, MapPin, User, AlertCircle } from 'lucide-react';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5003/api';
+const API_URL = import.meta.env.VITE_API_URL || 'https://pet-care-backend-422z.onrender.com/api';
 
 const AdoptionScheduler = () => {
   const [adoptionForms, setAdoptionForms] = useState([]);
@@ -190,7 +190,7 @@ const handleVisitResponse = async (visitId, response) => {
                         <div className="flex-shrink-0">
                           {form.petImage ? (
                             <img
-                              src={form.petImage.startsWith('http') ? form.petImage : `http://localhost:5003${form.petImage}`}
+                              src={form.petImage.startsWith('http') ? form.petImage : `https://pet-care-backend-422z.onrender.com${form.petImage}`}
                               alt={form.petName}
                               className="w-24 h-24 rounded-lg object-cover"
                               onError={(e) => {
