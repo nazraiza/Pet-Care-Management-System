@@ -2,7 +2,6 @@ import dotenv from "dotenv";
 import dns from "dns";
 
 dotenv.config();
-console.log("JWT:", process.env.JWT_SECRET);
 
 dns.setServers(["1.1.1.1", "8.8.8.8"]);
 console.log("DNS servers:", dns.getServers());
